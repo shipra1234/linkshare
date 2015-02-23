@@ -10,7 +10,6 @@ class Topic {
     }
     Visibility visibility
     static constraints = {
-        name(unique:true)
         visibility(blank:true)
         dateCreated date:"now()"
         lastUpdated( autoTimestamp:true)
@@ -22,7 +21,5 @@ class Topic {
     }
     static hasMany = [resource:Resource,subscription:Subscription]
     static belongsTo = [user:User,subscription:Subscription]
-
-
 
 }

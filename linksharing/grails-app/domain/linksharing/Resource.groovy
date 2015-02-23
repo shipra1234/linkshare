@@ -1,12 +1,11 @@
 package linksharing
 
 
-class Resource {
+abstract class Resource {
     String title
     String description
     Date dateCreated
     Date lastUpdated
-    String pathToFile
     byte[] file
 
     static constraints = {
@@ -14,7 +13,7 @@ class Resource {
         dateCreated date: "now()"
         lastUpdated(autoTimestamp: true)
         description(maxSize:1024)
-        file(maxSize: 102400)
+        file(maxSize: 102400,nullable: true)
     }
     static belongsTo = [topic:Topic,user:User]
 

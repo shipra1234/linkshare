@@ -9,7 +9,7 @@ class Subscription {
     Date dateCreated
     Seriousness seriousness
     static constraints = {
-        seriousness(blank:false)
+        seriousness(blank:true)
         dateCreated date:"now()"
         user unique: 'topic'
     }

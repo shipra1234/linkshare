@@ -25,5 +25,5 @@ class User {
         return username
     }
     static hasMany = [topic:Topic]
-    static belongsTo = Subscription
+    static belongsTo = [Subscription,ReadingItem]
 }
