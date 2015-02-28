@@ -72,5 +72,23 @@ grails.project.dependency.resolution = {
         //compile ":less-asset-pipeline:1.10.0"
         //compile ":coffee-asset-pipeline:1.8.0"
         //compile ":handlebars-asset-pipeline:1.3.0.3"
+        compile ":console:1.5.4"
+        plugins {
+            compile ":codenarc:0.22"
+            compile ":simian:0.1-SNAPSHOT"
+            compile ":gmetrics:0.3.1"
+
+        }
+
+    }
+}
+
+codenarc {
+    ruleSetFiles = "file:grails-app/conf/CodeNarcRules.groovy"
+    reports = {
+        HtmlReport('html') {                  // Report type is 'html'
+            outputFile = 'target/CodeNarcReport.html'
+            title = 'My Test Code Narc Report'
+        }
     }
 }

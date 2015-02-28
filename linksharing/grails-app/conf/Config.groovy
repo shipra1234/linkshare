@@ -95,6 +95,14 @@ environments {
     }
 }
 
+simian {
+    reportsDir = "target/simian-reports"
+    fileDir = "."
+    cludesFiles = [includes  : "**/*.groovy **/*.java"
+                   , excludes: "**/*Spec.groovy **/Config.groovy **/ApplicationResources.groovy"]
+    methodParams = [threshold: 4]
+}
+
 // log4j configuration
 log4j.main = {
     // Example of changing the log pattern for the default console appender:

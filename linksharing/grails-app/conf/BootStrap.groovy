@@ -34,8 +34,8 @@ class BootStrap {
     def createUser={
         log.info "Creating users.."
 
-            user = new User(username: 'shipratayal', email: 'sttayalshipra@gmail.com', password: 'shipra', firstName: 'shipra', lastName: 'tayal', admin: 'true', active: 'true')
-            user2 = new User(username: 'shailytayal', email: 'sttayalshipra@gmail.com', password: 'shipra', firstName: 'shaily', lastName: 'tayal', admin: 'true', active: 'true')
+            user = new User(username: 'shipratayal', email: 'sttayalshipra@gmail.com', password: 'shipra',confirmPassword:'shipra', firstName: 'shipra', lastName: 'tayal', admin: 'true', active: 'true',photo:'/home/intelligrape/linkshare/linksharing/upload_image/index.jpeg')
+            user2 = new User(username: 'shailytayal', email: 'sttayalshipra@gmail.com', password: 'shipra',confirmPassword: 'shipra' ,firstName: 'shaily', lastName: 'tayal', admin: 'true', active: 'true',photo:'/home/intelligrape/linkshare/linksharing/upload_image/index.jpeg')
             user.save()
             user2.save(flush:true)
 
@@ -47,7 +47,7 @@ class BootStrap {
         Topic topicChk=Topic.get(1)
 
         println "++++++---------------"+topicChk
-        if(topicChk==null) {
+
             User user3 = User.findByUsername('shipratayal')
             User user4 = User.findByUsername('shailytayal')
 
@@ -80,7 +80,7 @@ class BootStrap {
             user4.addToTopic(topic10)
 
             user4.save(flush: true)
-        }
+
 
         log.info "topics creation done."
     }
@@ -114,7 +114,7 @@ class BootStrap {
 
    def resource={
        //Topic1,user1,linkResource
-       LinkResource resource=new LinkResource(title:'google',description:'mkjckdjckdjckj',url:'http://www.google.com')
+       LinkResource resource=new LinkResource(title:'google',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question. ',url:'http://www.google.com')
          Topic topicUrl=Topic.get(1)
        resource.topic=topicUrl
        User userUrl=User.get(1)

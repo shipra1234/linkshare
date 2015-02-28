@@ -1,0 +1,42 @@
+
+#b{
+    margin-top: 50px;
+    margin-left: 50px;
+
+
+}
+.right{
+    margin-left:50px;
+
+}
+
+#block{
+    height: 300px;
+    width: 500px;
+    /*background-color: #000000;*/
+    float: right;
+    margin-right: 150px;
+    border: solid 1px;
+
+
+
+}
+#bl{
+    float: right;
+    margin-right: 150px;
+    height: 200px;
+    width: 500px;
+    border: solid;
+    /*background-color: #0000cc;*/
+}
+
+#image{
+    height:70px;
+    width: 70px;
+    border: inherit;
+}
+#bind{
+    height: 300px;
+    width:500px;
+    border: solid;
+}

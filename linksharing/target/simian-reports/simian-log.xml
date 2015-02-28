@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="simian.xsl" type="text/xsl"?>
+<!--
+Similarity Analyser 2.3.35 - http://www.harukizaemon.com/simian
+Copyright (c) 2003-2013 Simon Harris.  All rights reserved.
+Simian is not free unless used solely for non-commercial or evaluation purposes.
+-->
+<simian version="2.3.35">
+    <check ignoreCharacterCase="true" ignoreCurlyBraces="true" ignoreIdentifierCase="true" ignoreModifiers="true" ignoreStringCase="true" threshold="4">
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/tomcat-7.0.55/src/groovy/org/grails/plugins/tomcat/fork/ForkedTomcatServer.groovy" startLineNumber="255" endLineNumber="260"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/tomcat-7.0.55/src/groovy/org/grails/plugins/tomcat/TomcatServer.groovy" startLineNumber="144" endLineNumber="149"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmTag.groovy" startLineNumber="23" endLineNumber="27"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmRollbackSql.groovy" startLineNumber="23" endLineNumber="27"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmRollback.groovy" startLineNumber="23" endLineNumber="27"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/web/GenericResponseWrapper.java" startLineNumber="260" endLineNumber="263"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/web/GenericResponseWrapper.java" startLineNumber="239" endLineNumber="242"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/web/GenericResponseWrapper.java" startLineNumber="218" endLineNumber="221"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/processors/CssProcessor.groovy" startLineNumber="116" endLineNumber="119"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/DirectiveProcessor.groovy" startLineNumber="273" endLineNumber="276"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/console-1.5.4/grails-app/controllers/org/grails/plugins/console/ConsoleController.groovy" startLineNumber="136" endLineNumber="142"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/console-1.5.4/grails-app/controllers/org/grails/plugins/console/ConsoleController.groovy" startLineNumber="116" endLineNumber="122"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/console-1.5.4/grails-app/controllers/org/grails/plugins/console/ConsoleController.groovy" startLineNumber="100" endLineNumber="106"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateRestfulController.groovy" startLineNumber="20" endLineNumber="25"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateAsyncController.groovy" startLineNumber="28" endLineNumber="33"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/simian-0.1-SNAPSHOT/dependencies.groovy" startLineNumber="1" endLineNumber="4"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/gmetrics-0.3.1/dependencies.groovy" startLineNumber="1" endLineNumber="5"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/codenarc-0.22/dependencies.groovy" startLineNumber="1" endLineNumber="5"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/tomcat-7.0.55/src/groovy/org/grails/plugins/tomcat/fork/TomcatWarRunner.groovy" startLineNumber="81" endLineNumber="84"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/tomcat-7.0.55/src/groovy/org/grails/plugins/tomcat/InlineExplodedTomcatServer.groovy" startLineNumber="106" endLineNumber="109"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/grails-app/taglib/grails/plugin/cache/CacheTagLib.groovy" startLineNumber="93" endLineNumber="98"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/grails-app/taglib/grails/plugin/cache/CacheTagLib.groovy" startLineNumber="55" endLineNumber="61"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/CliTests.groovy" startLineNumber="4" endLineNumber="9"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/artifacts/Tests.groovy" startLineNumber="4" endLineNumber="9"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateViews.groovy" startLineNumber="36" endLineNumber="40"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateRestfulController.groovy" startLineNumber="31" endLineNumber="35"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateController.groovy" startLineNumber="36" endLineNumber="40"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateAsyncController.groovy" startLineNumber="38" endLineNumber="42"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateAll.groovy" startLineNumber="38" endLineNumber="42"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/web/filter/PageFragmentCachingFilter.java" startLineNumber="306" endLineNumber="310"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/web/filter/PageFragmentCachingFilter.java" startLineNumber="254" endLineNumber="258"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/web/Header.java" startLineNumber="140" endLineNumber="143"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/CustomCacheKeyGenerator.java" startLineNumber="64" endLineNumber="67"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/src/java/org/codehaus/groovy/grails/scaffolding/AbstractGrailsTemplateGenerator.java" startLineNumber="245" endLineNumber="248"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/src/java/org/codehaus/groovy/grails/scaffolding/AbstractGrailsTemplateGenerator.java" startLineNumber="111" endLineNumber="115"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/UnitTest.groovy" startLineNumber="9" endLineNumber="17"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/TagLib.groovy" startLineNumber="8" endLineNumber="16"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/Service.groovy" startLineNumber="8" endLineNumber="16"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/Generic.groovy" startLineNumber="10" endLineNumber="18"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/Filters.groovy" startLineNumber="5" endLineNumber="13"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/DomainClass.groovy" startLineNumber="8" endLineNumber="16"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/Controller.groovy" startLineNumber="8" endLineNumber="16"/>
+        </set>
+        <set lineCount="4">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/grails/LinkGenerator.groovy" startLineNumber="78" endLineNumber="81"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/grails/CachingLinkGenerator.groovy" startLineNumber="75" endLineNumber="78"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/grails-app/taglib/asset/pipeline/AssetMethodTagLib.groovy" startLineNumber="42" endLineNumber="45"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmGenerateGormChangelog.groovy" startLineNumber="23" endLineNumber="30"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmGormDiff.groovy" startLineNumber="34" endLineNumber="41"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/src/java/org/codehaus/groovy/grails/scaffolding/AbstractGrailsTemplateGenerator.java" startLineNumber="117" endLineNumber="122"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/src/java/org/codehaus/groovy/grails/scaffolding/AbstractGrailsTemplateGenerator.java" startLineNumber="181" endLineNumber="187"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/src/java/org/codehaus/groovy/grails/scaffolding/AbstractGrailsTemplateGenerator.java" startLineNumber="250" endLineNumber="256"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/console-1.5.4/grails-app/controllers/org/grails/plugins/console/ConsoleController.groovy" startLineNumber="116" endLineNumber="124"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/console-1.5.4/grails-app/controllers/org/grails/plugins/console/ConsoleController.groovy" startLineNumber="136" endLineNumber="144"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/AssetCompiler.groovy" startLineNumber="229" endLineNumber="233"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/AssetCompiler.groovy" startLineNumber="240" endLineNumber="244"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/webxml-1.4.1/dependencies.groovy" startLineNumber="9" endLineNumber="15"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/simian-0.1-SNAPSHOT/dependencies.groovy" startLineNumber="8" endLineNumber="21"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/web/GenericResponseWrapper.java" startLineNumber="218" endLineNumber="223"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/web/GenericResponseWrapper.java" startLineNumber="260" endLineNumber="265"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/CacheEvict.java" startLineNumber="32" endLineNumber="36"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/CachePut.java" startLineNumber="34" endLineNumber="38"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/Cacheable.java" startLineNumber="34" endLineNumber="38"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateAsyncController.groovy" startLineNumber="49" endLineNumber="53"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateController.groovy" startLineNumber="47" endLineNumber="51"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateRestfulController.groovy" startLineNumber="42" endLineNumber="46"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/Generic.groovy" startLineNumber="9" endLineNumber="18"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/UnitTest.groovy" startLineNumber="8" endLineNumber="17"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmRollback.groovy" startLineNumber="23" endLineNumber="30"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmTag.groovy" startLineNumber="23" endLineNumber="30"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/src/groovy/grails/plugin/databasemigration/DslBuilder.groovy" startLineNumber="358" endLineNumber="364"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/src/groovy/grails/plugin/databasemigration/DslBuilder.groovy" startLineNumber="370" endLineNumber="375"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/grails-app/taglib/asset/pipeline/AssetsTagLib.groovy" startLineNumber="39" endLineNumber="44"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/grails-app/taglib/asset/pipeline/AssetsTagLib.groovy" startLineNumber="79" endLineNumber="84"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/Controller.groovy" startLineNumber="7" endLineNumber="16"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/DomainClass.groovy" startLineNumber="7" endLineNumber="16"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/Service.groovy" startLineNumber="7" endLineNumber="16"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/testing/TagLib.groovy" startLineNumber="7" endLineNumber="16"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/web/filter/PageFragmentCachingFilter.java" startLineNumber="729" endLineNumber="736"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/web/filter/PageFragmentCachingFilter.java" startLineNumber="789" endLineNumber="796"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmDiff.groovy" startLineNumber="57" endLineNumber="63"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmGormDiff.groovy" startLineNumber="57" endLineNumber="63"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/_DatabaseMigrationCommon.groovy" startLineNumber="60" endLineNumber="67"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/GrailsAnnotationCacheOperationSource.java" startLineNumber="203" endLineNumber="211"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/GrailsAnnotationCacheOperationSource.java" startLineNumber="219" endLineNumber="227"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/grails-app/conf/linksharing/ShowFilters.groovy" startLineNumber="5" endLineNumber="13"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/artifacts/Filters.groovy" startLineNumber="3" endLineNumber="11"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateAsyncController.groovy" startLineNumber="25" endLineNumber="32"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateController.groovy" startLineNumber="25" endLineNumber="32"/>
+        </set>
+        <set lineCount="5">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/grails-app/controllers/linksharing/LoginController.groovy" startLineNumber="8" endLineNumber="12"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/grails-app/controllers/linksharing/UserController.groovy" startLineNumber="49" endLineNumber="55"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/webxml-1.4.1/dependencies.groovy" startLineNumber="1" endLineNumber="9"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/console-1.5.4/dependencies.groovy" startLineNumber="1" endLineNumber="9"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/jquery-1.11.1/src/groovy/org/codehaus/groovy/grails/plugins/jquery/JQueryProvider.groovy" startLineNumber="87" endLineNumber="92"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/jquery-1.11.1/src/groovy/org/codehaus/groovy/grails/plugins/jquery/JQueryProvider.groovy" startLineNumber="73" endLineNumber="78"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/DirectiveProcessor.groovy" startLineNumber="181" endLineNumber="187"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/DirectiveProcessor.groovy" startLineNumber="155" endLineNumber="161"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/grails-app/taglib/asset/pipeline/AssetsTagLib.groovy" startLineNumber="70" endLineNumber="75"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/grails-app/taglib/asset/pipeline/AssetsTagLib.groovy" startLineNumber="29" endLineNumber="34"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/src/java/org/codehaus/groovy/grails/scaffolding/SimpleDomainClassPropertyComparator.java" startLineNumber="35" endLineNumber="43"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/src/java/org/codehaus/groovy/grails/scaffolding/DomainClassPropertyComparator.java" startLineNumber="44" endLineNumber="52"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/console-1.5.4/dependencies.groovy" startLineNumber="4" endLineNumber="11"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/jquery-1.11.1/dependencies.groovy" startLineNumber="3" endLineNumber="10"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmPreviousChangesetSql.groovy" startLineNumber="23" endLineNumber="34"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmRollbackCountSql.groovy" startLineNumber="23" endLineNumber="34"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmUpdateCountSql.groovy" startLineNumber="23" endLineNumber="34"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateAsyncController.groovy" startLineNumber="36" endLineNumber="46"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateController.groovy" startLineNumber="34" endLineNumber="44"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateRestfulController.groovy" startLineNumber="29" endLineNumber="39"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateViews.groovy" startLineNumber="34" endLineNumber="44"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmRollbackCount.groovy" startLineNumber="23" endLineNumber="34"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmUpdateCount.groovy" startLineNumber="23" endLineNumber="34"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/tomcat-7.0.55/src/groovy/org/grails/plugins/tomcat/TomcatServer.groovy" startLineNumber="127" endLineNumber="137"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/tomcat-7.0.55/src/groovy/org/grails/plugins/tomcat/fork/ForkedTomcatServer.groovy" startLineNumber="242" endLineNumber="252"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmUpdateCountSql.groovy" startLineNumber="23" endLineNumber="36"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/scripts/DbmRollbackCountSql.groovy" startLineNumber="23" endLineNumber="36"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/grails/LinkGenerator.groovy" startLineNumber="15" endLineNumber="35"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/grails/CachingLinkGenerator.groovy" startLineNumber="14" endLineNumber="32"/>
+        </set>
+        <set lineCount="9">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/src/groovy/grails/plugin/databasemigration/GrailsChange.groovy" startLineNumber="232" endLineNumber="265"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/database-migration-1.4.0/src/groovy/grails/plugin/databasemigration/GrailsPrecondition.groovy" startLineNumber="121" endLineNumber="154"/>
+        </set>
+        <set lineCount="9">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/gmetrics-0.3.1/dependencies.groovy" startLineNumber="1" endLineNumber="14"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/simian-0.1-SNAPSHOT/dependencies.groovy" startLineNumber="1" endLineNumber="10"/>
+        </set>
+        <set lineCount="9">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/CustomCacheKeyGenerator.java" startLineNumber="79" endLineNumber="88"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/cache-1.1.8/src/java/grails/plugin/cache/web/Header.java" startLineNumber="147" endLineNumber="162"/>
+        </set>
+        <set lineCount="11">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/DirectiveProcessor.groovy" startLineNumber="280" endLineNumber="293"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/processors/CssProcessor.groovy" startLineNumber="123" endLineNumber="138"/>
+        </set>
+        <set lineCount="14">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateController.groovy" startLineNumber="34" endLineNumber="53"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/scripts/GenerateAsyncController.groovy" startLineNumber="36" endLineNumber="55"/>
+        </set>
+        <set lineCount="18">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/gmetrics-0.3.1/scripts/Gmetrics.groovy" startLineNumber="83" endLineNumber="124"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/codenarc-0.22/scripts/Codenarc.groovy" startLineNumber="201" endLineNumber="233"/>
+        </set>
+        <set lineCount="35">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/grails/CachingLinkGenerator.groovy" startLineNumber="35" endLineNumber="81"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/asset-pipeline-1.9.9/src/groovy/asset/pipeline/grails/LinkGenerator.groovy" startLineNumber="38" endLineNumber="84"/>
+        </set>
+        <set lineCount="37">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/scaffolding/RestfulController.groovy" startLineNumber="1" endLineNumber="60"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/src/templates/scaffolding/RestfulController.groovy" startLineNumber="1" endLineNumber="60"/>
+        </set>
+        <set lineCount="58">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/src/templates/scaffolding/Controller.groovy" startLineNumber="1" endLineNumber="99"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/scaffolding/Controller.groovy" startLineNumber="1" endLineNumber="99"/>
+        </set>
+        <set lineCount="65">
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/src/templates/scaffolding/AsyncController.groovy" startLineNumber="1" endLineNumber="109"/>
+            <block sourceFile="/home/intelligrape/linkshare/linksharing/target/work/plugins/scaffolding-2.1.2/src/templates/scaffolding/AsyncController.groovy" startLineNumber="1" endLineNumber="109"/>
+        </set>
+        <summary duplicateFileCount="72" duplicateLineCount="993" duplicateBlockCount="110" totalFileCount="273" totalRawLineCount="21379" totalSignificantLineCount="9591" processingTime="1852"/>
+    </check>
+</simian>
