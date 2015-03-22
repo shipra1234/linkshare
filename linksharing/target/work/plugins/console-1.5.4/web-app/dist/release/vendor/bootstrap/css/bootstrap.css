@@ -3424,7 +3424,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-collapse:after {
   clear: both;
 }
-.navbar-collapse.in {
+.navbar-collapse.s {
   overflow-y: auto;
 }
 @media (min-width: 768px) {
@@ -3439,7 +3439,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     padding-bottom: 0;
     overflow: visible !important;
   }
-  .navbar-collapse.in {
+  .navbar-collapse.s {
     overflow-y: visible;
   }
   .navbar-collapse .navbar-nav.navbar-left:first-child {
@@ -4824,7 +4824,7 @@ button.close {
   opacity: 0;
   filter: alpha(opacity=0);
 }
-.tooltip.in {
+.tooltip.s {
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
@@ -5059,7 +5059,7 @@ body.modal-open,
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
-.modal.in .modal-dialog {
+.modal.s .modal-dialog {
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
@@ -5095,7 +5095,7 @@ body.modal-open,
   opacity: 0;
   filter: alpha(opacity=0);
 }
-.modal-backdrop.in {
+.modal-backdrop.s {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
@@ -5891,13 +5891,13 @@ td.visible-print {
   -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
-.fade.in {
+.fade.s {
   opacity: 1;
 }
 .collapse {
   display: none;
 }
-.collapse.in {
+.collapse.s {
   display: block;
 }
 .collapsing {

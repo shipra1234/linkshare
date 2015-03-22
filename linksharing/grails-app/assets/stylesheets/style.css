@@ -1,0 +1,118 @@
+#b {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+.right {
+    margin-left: 50px;
+}
+#block {
+    border: 1px solid;
+    float: right;
+    height: 510px;
+    margin-right: 150px;
+    width: 500px;
+}
+.bl {
+    float: right;
+    border: medium solid;
+    height: 200px;
+    margin-left:100px;
+    width: 500px;
+    margin-top: 200px;
+}
+#image {
+    border: inherit;
+    height: 70px;
+    width: 70px;
+}
+#bind {
+    border: medium solid;
+    height: 300px;
+    width: 500px;
+}
+#n {
+    margin-right: 200px;
+}
+
+.message{
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+    float: right;
+}
+#search{
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+#down{
+    margin-top:30px;
+}
+.inbox{
+    border:solid 1px;
+    width:600px;
+    margin-right:100px;
+
+
+}
+.border{
+    height:50px;
+    width: 600px;
+    border:1px solid;
+
+}
+.under{
+    height:150px;
+    border-bottom:1px solid;
+}
+.m{
+    height:60px;
+    width: 60px;
+}
+#user{
+    height:150px;
+    width:500px;
+    border: 1px solid ;
+    margin-left:40px;
+
+}
+
+.s {
+    border:solid 3px;
+    width:500px;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+.bo{
+    height:40px;
+    border-bottom:3px solid
+}
+.img{
+    height: 20px;
+    width: 20px;
+    margin-top: 40px;
+}
+.im{
+    height: 20px;
+    width: 20px;
+
+}
+.ima{
+    height: 20px;
+    width: 20px;
+    margin-top: 20px;
+}
+.p {
+    height:300px;
+    width:500px;
+    border: 1px solid ;
+    margin-left:40px;
+
+}
+.mfade{
+    background-color: #000;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}

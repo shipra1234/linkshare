@@ -3360,21 +3360,21 @@ input[type="button"].btn-block {
        -o-transition: opacity .15s linear;
           transition: opacity .15s linear;
 }
-.fade.in {
+.fade.s {
   opacity: 1;
 }
 .collapse {
   display: none;
   visibility: hidden;
 }
-.collapse.in {
+.collapse.s {
   display: block;
   visibility: visible;
 }
-tr.collapse.in {
+tr.collapse.s {
   display: table-row;
 }
-tbody.collapse.in {
+tbody.collapse.s {
   display: table-row-group;
 }
 .collapsing {
@@ -4073,7 +4073,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
 }
-.navbar-collapse.in {
+.navbar-collapse.s {
   overflow-y: auto;
 }
 @media (min-width: 768px) {
@@ -4090,7 +4090,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     overflow: visible !important;
     visibility: visible !important;
   }
-  .navbar-collapse.in {
+  .navbar-collapse.s {
     overflow-y: visible;
   }
   .navbar-fixed-top .navbar-collapse,
@@ -5722,7 +5722,7 @@ button.close {
        -o-transform: translate(0, -25%);
           transform: translate(0, -25%);
 }
-.modal.in .modal-dialog {
+.modal.s .modal-dialog {
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
        -o-transform: translate(0, 0);
@@ -5760,7 +5760,7 @@ button.close {
   filter: alpha(opacity=0);
   opacity: 0;
 }
-.modal-backdrop.in {
+.modal-backdrop.s {
   filter: alpha(opacity=50);
   opacity: .5;
 }
@@ -5832,7 +5832,7 @@ button.close {
   filter: alpha(opacity=0);
   opacity: 0;
 }
-.tooltip.in {
+.tooltip.s {
   filter: alpha(opacity=90);
   opacity: .9;
 }

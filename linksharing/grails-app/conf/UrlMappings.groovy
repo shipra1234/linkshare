@@ -6,8 +6,11 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-        "/"(controller:'login',action:'signUp')
-          //   "/"(view:'/dashboard')
-        "500"(view:'/error')
+
+     "/"(controller:'login',action:'signUp')
+     //   "/"(view:'/layouts/dashboard_layout')
+      //  "/"(view:'pagination')
+     //  "/"(controller:'paginate',action:'count')
+
 	}
 }

@@ -5,6 +5,7 @@ class ShowFilters {
     def filters = {
         all(controller: '*', action: '*') {
             before = {
+                println "-----------------${params}"
 
             }
             after = { Map model ->
@@ -25,26 +26,50 @@ class ShowFilters {
 //            }
 //        }
 
-        activeUser(controller:'user',action:'*')
-                {
-                    before= {
-                        if (session.getAttribute("user") == null) {
-                            redirect(controller: 'chk', action: 'index')
-                            return false
-                        } else {
-                            println "welcome"
-                        }
-                    }
-
-                    }
-           User(controller:'*',action:'*')
+//       activeUser(controller:'login',action:'login')
+//                {
+//                    before= {
+//
+//                            if (session.getAttribute("user") == null) {
+//                                redirect(controller: 'chk', action: 'index')
+//
+//                            }
+//                        }
+//
+//
+//                   }
+//
+           forAdmin(controller:'user',action:'userList')
                    {
-            before={
-                println "${controllerName}+----------+++++++++++${actionName}"
-            }
-        }
-                }
+                       before = {
+                           String name=session.getAttribute('user')
+                           User user=User.findByUsername(name)
+                               if (user.role!='admin') {
+                                   flash.message="you are not authorized for this link"
+                                   redirect(controller: 'chk', action: 'index')
 
+                               }
+                           }
+                       }
+//
+//           User(controller:'*',action:'*')
+//                   {
+//            before={
+//                println "${controllerName}+----------+++++++++++${actionName}"
+//           }
+//       }
+//                }
 
+//       notUser(controller:'*',action:'*',controllerExclude:'login|assets|chk')
+//               {
+//                     before={
+//                         if (session.getAttribute("user") == null) {
+//                             redirect(controller: 'login', action: 'signUp')
+//                         }
+//
+//                         }
+//               }
     }
+
+}
 

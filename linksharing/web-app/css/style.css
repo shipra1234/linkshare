@@ -1,42 +1,40 @@
-
-#b{
-    margin-top: 50px;
+#b {
     margin-left: 50px;
-
-
+    margin-top: 50px;
 }
-.right{
-    margin-left:50px;
-
+.right {
+    margin-left: 50px;
 }
-
-#block{
+#block {
+    border: 1px solid;
+    float: right;
     height: 300px;
+    margin-right: 150px;
     width: 500px;
-    /*background-color: #000000;*/
-    float: right;
-    margin-right: 150px;
-    border: solid 1px;
-
-
-
 }
-#bl{
+.bl {
+    border: medium solid;
     float: right;
-    margin-right: 150px;
     height: 200px;
+    margin-right: 150px;
     width: 500px;
-    border: solid;
-    /*background-color: #0000cc;*/
+}
+#image {
+    border: inherit;
+    height: 70px;
+    width: 70px;
+}
+#bind {
+    border: medium solid;
+    height: 300px;
+    width: 500px;
+}
+#n {
+    margin-right: 200px;
 }
 
-#image{
-    height:70px;
-    width: 70px;
-    border: inherit;
-}
-#bind{
-    height: 300px;
-    width:500px;
-    border: solid;
+#message
+{
+   height: 20px;
+    width: 20px;
 }

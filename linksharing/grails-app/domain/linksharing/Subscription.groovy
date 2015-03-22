@@ -1,8 +1,6 @@
 package linksharing
 
 class Subscription {
-    Topic topic
-    User  user
     enum Seriousness{
         SERIOUS,VERYSERIOUS,CASUAL
     }

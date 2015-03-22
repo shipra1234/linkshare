@@ -8,10 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title><g:layoutTitle default="linksharing"></g:layoutTitle></title>
-<g:layoutHead><link href="css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="css/style.css" rel="stylesheet"/>
-</g:layoutHead>
+
+
+    <title><g:layoutTitle default="LinkSharing"/></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <asset:stylesheet src="application.css"/>
+    <asset:javascript src="application.js"/>
+
+    <g:layoutHead/>
 
 </head>
 

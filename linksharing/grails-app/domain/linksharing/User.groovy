@@ -9,14 +9,15 @@ class User {
     String lastName
     String confirmPassword
     String photo
-    boolean admin
+   // boolean admin
+    String role
     boolean active
     Date dateCreated
     Date lastUpdated
     static constraints = {
         username(unique: true)
         email(email: true, blank: false)
-        password(size: 6..10, blank: false, validator: { val, obj ->
+        password (size: 6..10,blank: false, validator: { val, obj ->
             if (!(val?.equals(obj.confirmPassword))) {
                 return false
             }
@@ -24,15 +25,12 @@ class User {
         dateCreated date: "now()"
         lastUpdated(autoTimestamp: true)
         photo(maxSize: 1024 * 1024 * 2, nullable: true)
-        admin(nullable: true, blank: true)
+        //admin(nullable: true, blank: true)
         active(nullable: true, blank: true)
-        confirmPassword(nullable: true, blank: true)
+        confirmPassword(nullable: false, blank: true)
 
     }
 
-    public String toString() {
-        return username
-    }
     static hasMany = [topic: Topic]
     static belongsTo = [Subscription, ReadingItem]
 }

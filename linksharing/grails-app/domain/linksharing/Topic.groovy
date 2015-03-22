@@ -13,13 +13,10 @@ class Topic {
         visibility(blank:true)
         dateCreated date:"now()"
         lastUpdated( autoTimestamp:true)
+        name unique: 'user'
     }
 
-    public String toString()
-    {
-        return name
-    }
     static hasMany = [resource:Resource,subscription:Subscription]
-    static belongsTo = [user:User,subscription:Subscription]
+    static belongsTo = [user:User]
 
 }

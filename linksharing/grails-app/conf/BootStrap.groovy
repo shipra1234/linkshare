@@ -1,4 +1,6 @@
+
 import linksharing.Resource
+import linksharing.ResourceRating
 import linksharing.User
 import linksharing.Topic
 import linksharing.Subscription
@@ -24,8 +26,8 @@ class BootStrap {
        createTopics()
         subscription()
         resource()
-        readingItems()
-
+      readingItems()
+        rating()
     }
 
     def destroy = {
@@ -34,8 +36,8 @@ class BootStrap {
     def createUser={
         log.info "Creating users.."
 
-            user = new User(username: 'shipratayal', email: 'sttayalshipra@gmail.com', password: 'shipra',confirmPassword:'shipra', firstName: 'shipra', lastName: 'tayal', admin: 'true', active: 'true',photo:'/home/intelligrape/linkshare/linksharing/upload_image/index.jpeg')
-            user2 = new User(username: 'shailytayal', email: 'sttayalshipra@gmail.com', password: 'shipra',confirmPassword: 'shipra' ,firstName: 'shaily', lastName: 'tayal', admin: 'true', active: 'true',photo:'/home/intelligrape/linkshare/linksharing/upload_image/index.jpeg')
+            user = new User(username: 'shipratayal', email: 'sttayalshipra4@gmail.com', password: 'shipra',confirmPassword:'shipra', firstName: 'shipra', lastName: 'tayal',role:'admin', active: 'true',photo:'/home/intelligrape/linkshare/linksharing/upload_image/index.jpeg')
+            user2 = new User(username: 'shailytayal', email: 'sttayalshipra4@gmail.com', password: 'shipra',confirmPassword: 'shipra' ,firstName: 'shaily', lastName: 'tayal',role:'user', active: 'true',photo:'/home/intelligrape/linkshare/linksharing/upload_image/index.jpeg')
             user.save()
             user2.save(flush:true)
 
@@ -44,29 +46,34 @@ class BootStrap {
 
     def createTopics={
         log.info "Creating topics"
-        Topic topicChk=Topic.get(1)
-
-        println "++++++---------------"+topicChk
-
             User user3 = User.findByUsername('shipratayal')
             User user4 = User.findByUsername('shailytayal')
 
             topic1 = new Topic(name: 'grails', visibility: Topic.Visibility.PUBLIC)
-//        topic1.save(flush: true, failOnError: true)
-
             topic2 = new Topic(name: 'groovy', visibility: Topic.Visibility.PUBLIC)
+
             topic3 = new Topic(name: 'html', visibility: Topic.Visibility.PUBLIC)
             topic4 = new Topic(name: 'java', visibility: Topic.Visibility.PUBLIC)
             topic5 = new Topic(name: 'jquery', visibility: Topic.Visibility.PUBLIC)
-            topic6 = new Topic(name: 'grails', visibility: Topic.Visibility.PUBLIC)
-//        topic1.save(flush: true, failOnError: true)
 
-            topic7 = new Topic(name: 'groovy', visibility: Topic.Visibility.PUBLIC)
-            topic8 = new Topic(name: 'html', visibility: Topic.Visibility.PUBLIC)
-            topic9 = new Topic(name: 'java', visibility: Topic.Visibility.PUBLIC)
-            topic10 = new Topic(name: 'jquery', visibility: Topic.Visibility.PUBLIC)
+            topic6 = new Topic(name: 'php', visibility: Topic.Visibility.PUBLIC)
+            topic7 = new Topic(name: 'ruby', visibility: Topic.Visibility.PUBLIC)
+            topic8 = new Topic(name: 'c#', visibility: Topic.Visibility.PUBLIC)
+            topic9 = new Topic(name: 'asp', visibility: Topic.Visibility.PUBLIC)
+            topic10 = new Topic(name: 'bootstrap', visibility: Topic.Visibility.PUBLIC)
 
-            user3.addToTopic(topic1)
+        Subscription subscription1=new Subscription(topic:topic1,user:user3,seriousness:Subscription.Seriousness.SERIOUS)
+        Subscription subscription2=new Subscription(topic:topic2,user:user3,seriousness:Subscription.Seriousness.SERIOUS)
+        Subscription subscription3=new Subscription(topic:topic3,user:user3,seriousness:Subscription.Seriousness.SERIOUS)
+        Subscription subscription4=new Subscription(topic:topic4,user:user3,seriousness:Subscription.Seriousness.SERIOUS)
+        Subscription subscription5=new Subscription(topic:topic5,user:user3,seriousness:Subscription.Seriousness.SERIOUS)
+        Subscription subscription6=new Subscription(topic:topic6,user:user4,seriousness:Subscription.Seriousness.SERIOUS)
+        Subscription subscription7=new Subscription(topic:topic7,user:user4,seriousness:Subscription.Seriousness.SERIOUS)
+        Subscription subscription8=new Subscription(topic:topic8,user:user4,seriousness:Subscription.Seriousness.SERIOUS)
+        Subscription subscription9=new Subscription(topic:topic9,user:user4,seriousness:Subscription.Seriousness.SERIOUS)
+        Subscription subscription10=new Subscription(topic:topic10,user:user4,seriousness:Subscription.Seriousness.SERIOUS)
+           user3.addToTopic(topic1)
+
             user3.addToTopic(topic2)
             user3.addToTopic(topic3)
             user3.addToTopic(topic4)
@@ -80,6 +87,16 @@ class BootStrap {
             user4.addToTopic(topic10)
 
             user4.save(flush: true)
+        subscription1.save(flush:true,failOnError:true)
+        subscription2.save(flush:true,failOnError:true)
+        subscription3.save(flush:true,failOnError:true)
+        subscription4.save(flush:true,failOnError:true)
+        subscription5.save(flush:true,failOnError:true)
+        subscription6.save(flush:true,failOnError:true)
+        subscription7.save(flush:true,failOnError:true)
+        subscription8.save(flush:true,failOnError:true)
+        subscription9.save(flush:true,failOnError:true)
+        subscription10.save(flush:true,failOnError:true)
 
 
         log.info "topics creation done."
@@ -87,87 +104,71 @@ class BootStrap {
     def subscription={
 
         User user5=User.findByUsername('shipratayal')
-        User user6=User.findByUsername('shailytayal')
-        Topic topic11=Topic.findById(1)
-        Topic topic12=Topic.findById(2)
-        Topic topic13=Topic.findById(3)
-        Topic topic14=Topic.findById(4)
-        Topic topic15=Topic.findById(5)
-        Topic topic16=Topic.findById(6)
         Topic topic17=Topic.findById(7)
         Topic topic18=Topic.findById(8)
-        Topic topic19=Topic.findById(9)
-        Topic topic20=Topic.findById(10)
-
-        Subscription sub1=new Subscription(user:user5,topic:topic11, seriousness:Subscription.Seriousness.SERIOUS).save(flush: true)
-        Subscription sub2=new Subscription(user:user5,topic:topic12, seriousness:Subscription.Seriousness.SERIOUS).save(flush:true)
-        Subscription sub3=new Subscription(user:user5,topic:topic13, seriousness:Subscription.Seriousness.SERIOUS).save(flush:true)
-        Subscription sub4=new Subscription(user:user5,topic:topic14, seriousness:Subscription.Seriousness.SERIOUS).save(flush:true)
-        Subscription sub5=new Subscription(user:user5,topic:topic15, seriousness:Subscription.Seriousness.SERIOUS).save(flush:true)
-        Subscription sub6=new Subscription(user:user6,topic:topic16, seriousness:Subscription.Seriousness.SERIOUS).save(flush:true)
-        Subscription sub7=new Subscription(user:user6,topic:topic17, seriousness:Subscription.Seriousness.SERIOUS).save(flush:true)
-        Subscription sub8=new Subscription(user:user6,topic:topic18, seriousness:Subscription.Seriousness.SERIOUS).save(flush:true)
-        Subscription sub9=new Subscription(user:user6,topic:topic19, seriousness:Subscription.Seriousness.SERIOUS).save(flush:true)
-        Subscription sub10=new Subscription(user:user6,topic:topic20, seriousness:Subscription.Seriousness.SERIOUS).save(flush:true)
+        Subscription sub19=new Subscription(user:user5,topic:topic17, seriousness:Subscription.Seriousness.SERIOUS)
+        Subscription sub20=new Subscription(user:user5,topic:topic18, seriousness:Subscription.Seriousness.SERIOUS)
+        sub19.save(flush:true,failOnError:true)
+        sub20.save(flush:true,failOnError:true)
 
     }
 
    def resource={
        //Topic1,user1,linkResource
        LinkResource resource=new LinkResource(title:'google',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question. ',url:'http://www.google.com')
-         Topic topicUrl=Topic.get(1)
+         Topic topicUrl=Topic.findByName("grails")
        resource.topic=topicUrl
-       User userUrl=User.get(1)
+       User userUrl=User.findByUsername("shipratayal")
        resource.user=userUrl
        resource.save(flush:true,failOnError: true)
-       LinkResource resource2=new LinkResource(title:'new document',description:'mkjckdjckdjckj',url:'http://www.grails.org')
+       LinkResource resource2=new LinkResource(title:'new document',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question.',url:'http://www.grails.org')
        resource2.topic=topicUrl
        resource2.user=userUrl
        resource2.save(flush:true,failOnError: true)
-       LinkResource resource3=new LinkResource(title:'groovydocs',description:'mkjckdjckdjckj',url:'http://www.groovy.org')
+       LinkResource resource3=new LinkResource(title:'groovydocs',description:'I\'m very new to Groovy so there\'s probably a very simple answer to this question',url:'http://www.groovy.org')
        resource3.user=userUrl
        resource3.topic=topicUrl
        resource3.save(flush: true,failOnError: true)
-       LinkResource resource4=new LinkResource(title:'javascriptdocs',description:'mkjckdjckdjckj',url:'http://www.javascript.com')
+       LinkResource resource4=new LinkResource(title:'javascriptdocs',description:'I\'m very new to javascript so there\'s probably a very simple answer to this question',url:'http://www.javascript.com')
        resource4.topic=topicUrl
        resource4.user=userUrl
        resource4.save(flush:true,failOnError: true)
-       LinkResource resource5=new LinkResource(title:'grailsdocs',description:'mkjckdjckdjckj',url:'http://www.grails.org')
+       LinkResource resource5=new LinkResource(title:'grailsdocs',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',url:'http://www.grails.org')
        resource5.user=userUrl
        resource5.topic=topicUrl
        resource5.save(flush: true,failOnError: true)
-       //Topic1,user1,documentResource
-        DocumentResource document1=new DocumentResource(title:'document2',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+      //Topic1,user1,documentResource
+        DocumentResource document1=new DocumentResource(title:'document2',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
                     document1.topic=topicUrl
                     document1.user=userUrl
        document1.save(flush: true,failOnError: true)
-       DocumentResource document2=new DocumentResource(title:'document3',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document2=new DocumentResource(title:'document3',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document2.topic=topicUrl
        document2.user=userUrl
        document2.save(flush: true,failOnError: true)
-       DocumentResource document3=new DocumentResource(title:'document4',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document3=new DocumentResource(title:'document4',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document3.topic=topicUrl
        document3.user=userUrl
        document3.save(flush: true,failOnError: true)
-       DocumentResource document4=new DocumentResource(title:'document5',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document4=new DocumentResource(title:'document5',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document4.topic=topicUrl
        document4.user=userUrl
        document4.save(flush: true,failOnError: true)
-       DocumentResource document5=new DocumentResource(title:'document6',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document5=new DocumentResource(title:'document6',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document5.topic=topicUrl
        document5.user=userUrl
        document5.save(flush: true,failOnError: true)
        //Topic2,user1,linkresource
-       LinkResource resource6=new LinkResource(title:'javadocs',description:'mkjckdjckdjckj',url:'http://www.javatpoint.com')
-       Topic topicUrl2=Topic.get(2)
+       LinkResource resource6=new LinkResource(title:'javadocs',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',url:'http://www.javatpoint.com')
+       Topic topicUrl2=Topic.findByName('groovy')
        resource6.topic=topicUrl2
        resource6.user=userUrl
        resource6.save(flush:true,failOnError: true)
-       LinkResource resource7=new LinkResource(title:'content',description:'mkjckdjckdjckj',url:'http://www.stackoverflow.com')
+       LinkResource resource7=new LinkResource(title:'content',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',url:'http://www.stackoverflow.com')
        resource7.topic=topicUrl2
        resource7.user=userUrl
        resource7.save(flush:true,failOnError: true)
-       LinkResource resource8=new LinkResource(title:'docs',description:'mkjckdjckdjckj',url:'http://www.groovy.org')
+       LinkResource resource8=new LinkResource(title:'docs',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',url:'http://www.groovy.org')
        resource8.user=userUrl
        resource8.topic=topicUrl2
        resource8.save(flush: true,failOnError: true)
@@ -180,77 +181,77 @@ class BootStrap {
        resource10.topic=topicUrl2
        resource10.save(flush: true,failOnError: true)
        //Topic2,user1,documentResource
-       DocumentResource document6=new DocumentResource(title:'doc1',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document6=new DocumentResource(title:'doc1',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document6.topic=topicUrl2
        document6.user=userUrl
        document6.save(flush: true,failOnError: true)
-       DocumentResource document7=new DocumentResource(title:'doc2',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document7=new DocumentResource(title:'doc2',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document7.topic=topicUrl2
        document7.user=userUrl
        document7.save(flush: true,failOnError: true)
-       DocumentResource document8=new DocumentResource(title:'doc3',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document8=new DocumentResource(title:'doc3',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document8.topic=topicUrl2
        document8.user=userUrl
        document8.save(flush: true,failOnError: true)
-       DocumentResource document9=new DocumentResource(title:'doc4',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document9=new DocumentResource(title:'doc4',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document9.topic=topicUrl2
        document9.user=userUrl
        document9.save(flush: true,failOnError: true)
-       DocumentResource document10=new DocumentResource(title:'doc5',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document10=new DocumentResource(title:'doc5',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document10.topic=topicUrl2
        document10.user=userUrl
        document10.save(flush: true,failOnError: true)
-       //Topic3,user2,linkResource
-       LinkResource resource11=new LinkResource(title:'link1',description:'mkjckdjckdjckj',url:'http://www.google.com')
-       Topic topicUrl3=Topic.get(3)
+      //Topic3,user2,linkResource
+       LinkResource resource11=new LinkResource(title:'link1',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',url:'http://www.google.com')
+       Topic topicUrl3  =Topic.get(7)
        resource11.topic=topicUrl3
        User userUrl2=User.get(2)
        resource11.user=userUrl2
        resource11.save(flush:true,failOnError: true)
-       LinkResource resource12=new LinkResource(title:'link2',description:'mkjckdjckdjckj',url:'http://www.grails.org')
+       LinkResource resource12=new LinkResource(title:'link2',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',url:'http://www.grails.org')
        resource12.topic=topicUrl3
        resource12.user=userUrl2
        resource12.save(flush:true,failOnError: true)
-       LinkResource resource13=new LinkResource(title:'link3',description:'mkjckdjckdjckj',url:'http://www.groovy.org')
+       LinkResource resource13=new LinkResource(title:'link3',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',url:'http://www.groovy.org')
        resource13.user=userUrl2
        resource13.topic=topicUrl3
        resource13.save(flush: true,failOnError: true)
-       LinkResource resource14=new LinkResource(title:'link4',description:'mkjckdjckdjckj',url:'http://www.javascript.com')
+       LinkResource resource14=new LinkResource(title:'link4',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',url:'http://www.javascript.com')
        resource14.topic=topicUrl3
        resource14.user=userUrl2
        resource14.save(flush:true,failOnError: true)
-       LinkResource resource15=new LinkResource(title:'link5',description:'mkjckdjckdjckj',url:'http://www.grails.org')
+       LinkResource resource15=new LinkResource(title:'link5',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',url:'http://www.grails.org')
        resource15.user=userUrl2
        resource15.topic=topicUrl3
        resource15.save(flush: true,failOnError: true)
        //Topic3,user2,documentResource
-       DocumentResource document11=new DocumentResource(title:'document7',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document11=new DocumentResource(title:'document7',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document11.topic=topicUrl3
        document11.user=userUrl2
        document11.save(flush: true,failOnError: true)
-       DocumentResource document12=new DocumentResource(title:'document8',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document12=new DocumentResource(title:'document8',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document12.topic=topicUrl3
        document12.user=userUrl2
        document12.save(flush: true,failOnError: true)
-       DocumentResource document13=new DocumentResource(title:'document9',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document13=new DocumentResource(title:'document9',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document13.topic=topicUrl3
        document13.user=userUrl2
        document13.save(flush: true,failOnError: true)
-       DocumentResource document14=new DocumentResource(title:'document10',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document14=new DocumentResource(title:'document10',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document14.topic=topicUrl3
        document14.user=userUrl2
        document14.save(flush: true,failOnError: true)
-       DocumentResource document15=new DocumentResource(title:'document11',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
+       DocumentResource document15=new DocumentResource(title:'document11',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',filePath:'/home/shipra/shipra.txt')
        document15.topic=topicUrl3
        document15.user=userUrl2
        document15.save(flush: true,failOnError: true)
        //Topic4,user2,linkResource
-       LinkResource resource16=new LinkResource(title:'link6',description:'mkjckdjckdjckj',url:'http://www.google.com')
+       LinkResource resource16=new LinkResource(title:'link6',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',url:'http://www.google.com')
        Topic topicUrl4=Topic.get(4)
        resource16.topic=topicUrl4
        resource16.user=userUrl2
        resource16.save(flush:true,failOnError: true)
-       LinkResource resource17=new LinkResource(title:'link7',description:'mkjckdjckdjckj',url:'http://www.grails.org')
+       LinkResource resource17=new LinkResource(title:'link7',description:'I\'m very new to Grails so there\'s probably a very simple answer to this question',url:'http://www.grails.org')
        resource17.topic=topicUrl4
        resource17.user=userUrl2
        resource17.save(flush:true,failOnError: true)
@@ -266,7 +267,7 @@ class BootStrap {
        resource20.user=userUrl2
        resource20.topic=topicUrl4
        resource20.save(flush: true,failOnError: true)
-       //Topic4,user2,documentResource
+      //Topic4,user2,documentResource
        DocumentResource document16=new DocumentResource(title:'document12',description:'fhgfhghgghgh',filePath:'/home/shipra/shipra.txt')
        document16.topic=topicUrl4
        document16.user=userUrl2
@@ -288,8 +289,8 @@ class BootStrap {
        document20.user=userUrl2
        document20.save(flush: true,failOnError: true)
        //Topic5,user2,linkResource
-       LinkResource resource21=new LinkResource(title:'link11',description:'mkjckdjckdjckj',url:'http://www.google.com')
-       Topic topicUrl5=Topic.get(5)
+       LinkResource resource21=new LinkResource(title:'link11',description:'mkjckdjckdjckj',url:'http://www.grails.org/')
+       Topic topicUrl5=Topic.get(6)
        resource21.topic=topicUrl5
        resource21.user=userUrl2
        resource21.save(flush:true,failOnError: true)
@@ -335,46 +336,65 @@ class BootStrap {
    }
 
     def readingItems={
-        //for user1
-         ReadingItem rs=new ReadingItem(isRead:'true')
-        ReadingItem rs1=new ReadingItem(isRead:'true')
-        ReadingItem rs2=new ReadingItem(isRead:'true')
-        User read=User.get(1)
-        Resource res=Resource.get(1)
-        Resource res1=Resource.get(2)
-        Resource res2=Resource.get(3)
 
-          rs.user=read
-          rs.resource=res
-          rs.save(flush: true,failOnError: true)
-         rs1.user=read
-        rs1.resource=res1
-         rs1.save(flush: true,failOnError: true)
-        rs2.user=read
-        rs2.resource=res2
-        rs2.save(flush: true,failOnError: true)
-       //for user2
-        ReadingItem rs3=new ReadingItem(isRead:'true')
-        ReadingItem rs4=new ReadingItem(isRead:'true')
-        ReadingItem rs5=new ReadingItem(isRead:'true')
-        User read1=User.get(2)
-        Resource res3=Resource.get(4)
-        Resource res4=Resource.get(5)
-        Resource res5=Resource.get(6)
+        List <Subscription> subscription=Subscription.list()
+        subscription.each {subscribe->
+            User user = subscribe.user
+            Topic topic = subscribe.topic
+            List<Resource> resources = Resource.createCriteria().list {
+                and {
+                    ne("user", user)
+                    eq("topic", topic)
+                }
+            }
+            if(resources!=[])
+            {
+                resources.each {resource->
+                    ReadingItem readingItem = new ReadingItem(isRead:false, user: user, resource:resource)
+                    readingItem.save(flush:true,failOnError:true)
+                }
 
-        rs3.user=read1
-        rs3.resource=res3
-        rs3.save(flush: true,failOnError: true)
-        rs4.user=read1
-        rs4.resource=res4
-        rs4.save(flush: true,failOnError: true)
-        rs5.user=read1
-        rs5.resource=res5
-        rs5.save(flush: true,failOnError: true)
+            }
+        }
+
+    }
+
+
+
+    def rating={
+        User user1=User.findByUsername('shipratayal')
+        List<Topic> topicNames=Topic.findAllByUser(user1)
+        Topic topic1=Topic.findByName(topicNames.get(0).name)
+        Topic topic2=Topic.findByName(topicNames.get(1).name)
+
+        List<Resource> resource=Resource.findAllByTopic(topic1)
+        List<Resource> resource2=Resource.findAllByTopic(topic2)
+
+        ResourceRating rating1=new ResourceRating(score:3,user:user1,resource: resource[0])
+        rating1.save(flush:true,failOnError:true)
+
+        ResourceRating rating2=new ResourceRating(score:2)
+        rating2.user=user1
+        rating2.resource=resource[1]
+        rating2.save(flush:true,failOnError:true)
+        ResourceRating rating3=new ResourceRating(score:4)
+        rating3.user=user1
+        rating3.resource=resource[2]
+        rating3.save(flush:true,failOnError:true)
+        ResourceRating rating4=new ResourceRating(score:4)
+        rating4.user=user1
+        rating4.resource=resource[3]
+        rating4.save(flush:true,failOnError:true)
+        ResourceRating rating5=new ResourceRating(score:5)
+        rating5.user=user1
+        rating5.resource=resource2[1]
+        rating5.save(flush:true,failOnError:true)
+
 
 
 
     }
 
 }
+
 

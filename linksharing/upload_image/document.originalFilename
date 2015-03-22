@@ -1,0 +1,37 @@
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+ <div class="container">
+  <ul>
+ <li class="f">Comedies
+ <ul>
+<li><a href="#">As u like it</a></li>
+<li>All's well that Ends well</li>
+<li>A mildsummer night's dream</li>
+</ul>
+</li>
+ <li class="f">Tragedies
+ <ul>
+  <li><a href="#">Hamlet</a></li>
+<li>Macbeth</li>
+ <li>Romeo and Juliet</li>
+</ul>
+</li>
+<li class="f">Histories
+ <ul>
+  <li>Henry IV <a href="#">(Email)</a>
+   <ul>
+   <li>Part I</li>
+   <li>Part II</li>
+  </ul>
+  </li>
+  <li><a href="#">Henry V</a></li>
+  <li>Richard II</li>
+ </ul>
+</li>
+  </ul>
+</div>
+</body>
+</html>

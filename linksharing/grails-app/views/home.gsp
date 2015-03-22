@@ -38,68 +38,167 @@
         </form>
     </div>
 </nav>
+<g:if test="${flash.message}">
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    ${flash.message}
+</div>
+    </g:if>
 
 <div id="block">
-    <div>
-        <div style="border:solid 2px">
-            <h5>Recent Shares</h5>
+    <div class="clearfix">
+    <div style="border-bottom:2px solid">
+        <h5>Recent Shares</h5>
         </div>
-    <img id="image" src="<g:createLink controller="user" action="viewImage"
-                            params="[image:'/home/intelligrape/linkshare/linksharing/upload_image/index.jpeg']"/>"/>
-        <g:render template="/user/showdetails"/>
+        <g:each in="${resources}" var="res">
+      <div style="border-bottom: solid 2px;margin-bottom: 10px;height:120px;">
+          <div style="float: right">
+              <ls:recentShare resource="${res}"></ls:recentShare>
+          </div>
+          <div style="position:absolute">
+        <img src="${resource(dir:'images',file:'index.jpeg')}" class="m"/>
+
+          <div>
+            <g:actionSubmitImage  class="im" value="message" src="${resource(dir:'images',file:'facebook.jpeg')}"/>
+            <g:actionSubmitImage  class="im" value="message" src="${resource(dir:'images',file:'twitter.jpeg')}"/>
+            <g:actionSubmitImage class="im" value="message" src="${resource(dir:'images',file:'google.jpeg')}" />
+        </div>
+              </div>
+
     </div>
-   <div style="margin-top:30px;">
-       <img id="image" src="<g:createLink controller="user" action="viewImage"
-                               params="[image:'/home/intelligrape/linkshare/linksharing/upload_image/index.jpeg']"/>"/>
-       <g:render template="/user/showdetails"/>
-   </div>
+        </g:each>
+
+    <div class="bl right" style="float: right">
+        <div >
+            <div style="border:solid 2px">
+                <h5>Recent Post</h5>
+            </div>
+            <img src="${resource(dir:'images',file:'index.jpeg')}" class="m"/>
+            <div>
+                <g:actionSubmitImage  class="img" value="message" src="${resource(dir:'images',file:'facebook.jpeg')}"/>
+                <g:actionSubmitImage  class="img" value="message" src="${resource(dir:'images',file:'twitter.jpeg')}"/>
+                <g:actionSubmitImage class="img" value="message" src="${resource(dir:'images',file:'google.jpeg')}" />
+            </div>
+        </div>
+    </div>
 
 </div>
+    </div>
 <div class="right">
 <div class="form-group" >
-   <g:form controller="user" action="register" method="POST" enctype="multipart/form-data">
-       <label>FirstName</label>
-       <g:textField name="firstName"/><br/>
-       <label>LastName</label>
-       <g:textField name="lastName"/><br/>
-       <label>Email</label>
-       <g:textField name="email"/><br/>
-       <label>UserName</label>
-       <g:textField name="username"/><br/>
-       <label>Password</label>
-       <g:passwordField name="password"/><br/>
-       <label>Confirm Password</label>
-       <g:passwordField name="confirmPassword"/><br/>
-       Photo<input type="file"  name="photo" />
-       <g:submitButton name="register" value="Register"/>
+   <g:form controller="login" action="register" method="POST" enctype="multipart/form-data" id="form" name="form">
+       <label>FirstName*</label>
+       <input name="firstName" id="firstName" value="" type="text" style="margin-left:80px;"><br>
+       <label>LastName*</label>
+       <input name="lastName" value="" id="lastName" type="text" style="margin-left:80px;"><br>
+       <label>Email*</label>
+       <input name="email" value="" id="email" type="text"style="margin-left:110px;"><br>
+       <label>UserName*</label>
+       <input name="username" value="" id="username" type="text" style="margin-left:80px;"><br>
+       <label>Password*</label>
+       <input name="password" value="" id="password" type="password" style="margin-left:80px;"><br>
+       <label>Confirm Password*</label>
+       <input name="confirmPassword" value="" id="confirmPassword" type="password" style="margin-left:20px"><br>
+       Photo<input name="photo" type="file">
+       <input name="register" value="Register" id="register" type="submit">
    </g:form>
     </div>
 </div>
 <div class="form-group" id="b">
 
-    <g:form action= "login" controller="user">
-        <label>UserName</label>
-        <g:textField name="username"/><br/>
-        <label>Password</label>
+    <g:form action= "login" controller="login">
+        <label>UserName*</label>
+        <g:textField name="username" /><br/>
+        <label>Password*</label>
         <g:passwordField name="password"/><br/>
         <g:submitButton name="login" value="Login"/>
-        <g:link>ForgetPassword</g:link>
-        <h4>${flash.message}</h4>
-
+        <input type="button" name="forget" value="ForgetPassword" id="forget"/>
     </g:form>
     </div>
+<div id="dialog" title="Basic dialog" style="display: none;border:none;margin-left:100px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4>Forget Password</h4>
+            </div>
+            <g:form action="forgetPassword" controller="user" method="post">
+                <div class="modal-body">
+                    <label>UserName:*</label>
+                    <g:textField name="username" style="margin-left:20px;"/><br/>
+                    <label>Remember Password</label>
+                    <g:textField name="password"/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <g:submitButton name="Save" class="btn btn-default"/>
+                </div>
+            </g:form>
 
-<div id="bl">
-    <div>
-        <div style="border:solid 2px">
-            <h5>Recent Post</h5>
         </div>
-        <img  id="image" src="<g:createLink controller="user" action="viewImage"
-                                params="[image:'/home/intelligrape/linkshare/linksharing/upload_image/index.jpeg']"/>"/>
-        <g:render template="/user/showdetails"/>
     </div>
 </div>
 
 
+<g:javascript src="jquery-2.1.3.min.js"></g:javascript>
+<g:javascript src="bootstrap.min.js"></g:javascript>
+<g:javascript src="jquery.validate.min.js"></g:javascript>
+
+
+<script type="text/javascript">
+    $('document').ready(function(){
+        $('#form').validate({
+            rules:{
+                firstName:{
+                    required:true
+                },
+                lastName:{
+                    required:true
+                },
+                email:{
+                    required:true,
+                    email:true
+                },
+                username:{
+                    required:true
+                },
+                password:{
+                  required:true,
+                    minlength:6,
+                    maxlength:10
+                },
+                confirmPassword:{
+                    required:true,
+                    minlength:6,
+                    maxlength:10
+                }
+            },
+            messages:{
+                firstName:{
+                    required:"Please enter your firstName"
+                },
+                lastName:{
+                    required:"Please enter lastName"
+                },
+                email:{
+                    required:"email field is empty"
+                },
+                username:{
+                    required:"please enter username"
+                },
+                password:{
+                    required:"enter password"
+
+                },
+                confirmPassword:{
+                    required:"enter confirmPassword"
+                }
+            }
+        })
+        $('#forget').click(function(){
+            $('#dialog').modal('show')
+        });
+    });
+</script>
 </body>
 </html>
