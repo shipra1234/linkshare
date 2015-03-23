@@ -5,7 +5,7 @@ import grails.transaction.Transactional
 @Transactional
 class PostService {
 
-    def showData(String userName) {
+    def showData() {
       Integer rating=ResourceRating.createCriteria().get{
           projections{
               max "score"
@@ -13,16 +13,26 @@ class PostService {
 
       }
         ResourceRating rating1=ResourceRating.findByScore(rating)
-        Resource res=rating1.resource
-        User user=rating1.user
-        String username=user.username
-        String resource=res.description
-        String firstName=user.firstName
-        List<ResourceRating> list=[]
-        list << username
-        list << firstName
-        list << resource
+        Resource resource=rating1.resource
+        return resource
 
-        return list
+    }
+    def topic(){
+        List <Topic> topicList=[]
+        def topics = Resource.createCriteria().list([max:5,offset:0]) {
+            projections {
+                groupProperty("topic")
+                rowCount('count')
+            }
+            order('count','desc')
+        }
+
+        topics.each { topic->
+              Topic topic1= topic[0]
+            topicList << topic1
+
+        }
+       return  topicList
     }
 }
+

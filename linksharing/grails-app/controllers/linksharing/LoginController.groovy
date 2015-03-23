@@ -5,10 +5,12 @@ import CO.UserCO
 class LoginController {
         def userService
         def resourceService
+    def loginService
         def signUp()
         {
          List<Resource> resources=resourceService.resource()
-            render(view:'/home',model:[resources:resources])
+            List<Resource> resourceList= loginService.showPost()
+            render(view:'/home',model:[resources:resources,resourceList:resourceList])
         }
 
     def login(String username, String password) {
@@ -18,7 +20,6 @@ class LoginController {
             redirect(controller:'dashboard',action:'index')
 
         } else {
-
             flash.message = "please enter correct password"
             redirect(action:'signUp')
         }

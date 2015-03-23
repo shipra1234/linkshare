@@ -75,6 +75,30 @@
         </div>
 
 </div>
+<div class="invitation" title="Basic dialog"   style="display: none;border:none; margin-left:500px;position:fixed" tabindex="-1" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4>Send Invitation</h4>
+            </div>
+            <g:form action="sendInvitation" controller="dashboard" name="topic" id="topic1">
+                <div class="modal-body">
+                    <label>Email:*</label>
+                    <g:textField name="email" style="margin-left:20px;"/><br/>
+                    <label>Topic:*</label>
+                    <g:textField name="topic" id="invitetopic"></g:textField>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <g:submitButton name="Invite" class="btn btn-default"/>
+                </div>
+            </g:form>
+
+        </div>
+    </div>
+</div>
 <div id="user">
     <div class="clearfix">
     <div style="float:right;margin-right:100px;">
@@ -112,30 +136,6 @@
     </div>
 
     <g:each in="${topics}" var="t">
-        <div class="invitation" title="Basic dialog" style="display: none;border:none; margin-left:500px;position:fixed" tabindex="-1" >
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4>Send Invitation</h4>
-                    </div>
-                    <g:form action="sendInvitation" controller="dashboard" name="topic" id="topic1">
-                        <div class="modal-body">
-                            <label>Email:*</label>
-                            <g:textField name="email" style="margin-left:20px;"/><br/>
-                            <label>Topic:*</label>
-                            <g:textField name="topic" id="invitetopic" value="${t.name}"></g:textField>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <g:submitButton name="Invite" class="btn btn-default"/>
-                        </div>
-                    </g:form>
-
-                </div>
-            </div>
-        </div>
         <div class="under">
             <div style="float:right">
               <h4>  <a href="${createLink(action:'renderTopic',controller:'topic',
@@ -162,26 +162,20 @@
                             </g:form>
                         </div>
                         <div>
-                        <g:actionSubmitImage class="im" value="message" id="msg" src="${resource(dir:'images',file:'msg.jpeg')}" />
+                        <g:actionSubmitImage class="msg" value="${t.name}" id="${t.id}" src="${resource(dir:'images',file:'msg.jpeg')}" />
                         </div>
-
-
         </div>
+    </g:each>
 
-        </g:each>
 </div>
     </div>
+
+
 <script type="text/javascript">
     $(document).ready(function(){
         $("#bl").hide();
         $('.showBlock').hide();
-        $('#msg').click(function(){
-            $('.invitation').modal({
-                backdrop:false,
-                show:true
 
-            })
-        });
     });
     jQuery(document).on('click', '#s', function() {
         var url="${createLink(controller:'dashboard',action:'searchResource')}";
@@ -232,6 +226,19 @@
         })
     });
 
+    jQuery(document).on('click', '.msg', function() {
+        var id=$(this).attr('id');
+        var value=$(this).attr('value');
+         $('#invitetopic').val(value)
+        $('#'+id).click(function(){
+            $('.invitation').modal({
+                backdrop:false,
+                show:true
+
+            })
+
+            })
+    });
 </script>
 </body>
 </html>

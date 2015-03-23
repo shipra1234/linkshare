@@ -44,45 +44,61 @@
     ${flash.message}
 </div>
     </g:if>
-
-<div id="block">
+<div style="float:right;">
+<div class="inbox">
     <div class="clearfix">
-    <div style="border-bottom:2px solid">
-        <h5>Recent Shares</h5>
+        <div class="border">
+            <h3>Recent Share</h3>
         </div>
-        <g:each in="${resources}" var="res">
-      <div style="border-bottom: solid 2px;margin-bottom: 10px;height:120px;">
-          <div style="float: right">
-              <ls:recentShare resource="${res}"></ls:recentShare>
+            <g:each in="${resources}" var="res">
+                <div class="under" style="height:120px;" >
+                    <div style="float:right">
+                        <h4>  <a href="${createLink(action:'renderTopic',controller:'topic',
+                                params:[topic:"${res.topic.id}"])}">${res.topic.name}</a></h4>
+
+                    </div>
+                    <div>
+                        <div>
+                            <ls:showInbox resources="${res}"></ls:showInbox>
+                        </div>
+                        <img src="${resource(dir:'images',file:'index.jpeg')}" class="m"/>
+                        <div>
+                            <g:actionSubmitImage  class="im" value="message" src="${resource(dir:'images',file:'facebook.jpeg')}"/>
+                            <g:actionSubmitImage  class="im" value="message" src="${resource(dir:'images',file:'twitter.jpeg')}"/>
+                            <g:actionSubmitImage class="im" value="message" src="${resource(dir:'images',file:'google.jpeg')}" />
+                        </div>
+                    </div>
+                </div>
+            </g:each>
           </div>
-          <div style="position:absolute">
-        <img src="${resource(dir:'images',file:'index.jpeg')}" class="m"/>
-
-          <div>
-            <g:actionSubmitImage  class="im" value="message" src="${resource(dir:'images',file:'facebook.jpeg')}"/>
-            <g:actionSubmitImage  class="im" value="message" src="${resource(dir:'images',file:'twitter.jpeg')}"/>
-            <g:actionSubmitImage class="im" value="message" src="${resource(dir:'images',file:'google.jpeg')}" />
-        </div>
-              </div>
-
     </div>
-        </g:each>
-
-    <div class="bl right" style="float: right">
-        <div >
+    <div class="inbox" style="float:right;margin-top:30px;">
+        <div class="clearfix">
             <div style="border:solid 2px">
                 <h5>Recent Post</h5>
             </div>
-            <img src="${resource(dir:'images',file:'index.jpeg')}" class="m"/>
-            <div>
-                <g:actionSubmitImage  class="img" value="message" src="${resource(dir:'images',file:'facebook.jpeg')}"/>
-                <g:actionSubmitImage  class="img" value="message" src="${resource(dir:'images',file:'twitter.jpeg')}"/>
-                <g:actionSubmitImage class="img" value="message" src="${resource(dir:'images',file:'google.jpeg')}" />
-            </div>
+            <g:each in="${resourceList}" var="list">
+                <div class="under" style="height:120px;" >
+                    <div style="float:right">
+                        <h4>  <a href="${createLink(action:'renderTopic',controller:'topic',
+                                params:[topic:"${list.topic.id}"])}">${list.topic.name}</a></h4>
+
+                    </div>
+                    <div>
+                        <div>
+                            <ls:showInbox resources="${list}"></ls:showInbox>
+                        </div>
+                        <img src="${resource(dir:'images',file:'index.jpeg')}" class="m"/>
+                        <div>
+                            <g:actionSubmitImage  class="im" value="message" src="${resource(dir:'images',file:'facebook.jpeg')}"/>
+                            <g:actionSubmitImage  class="im" value="message" src="${resource(dir:'images',file:'twitter.jpeg')}"/>
+                            <g:actionSubmitImage class="im" value="message" src="${resource(dir:'images',file:'google.jpeg')}" />
+                        </div>
+                    </div>
+                </div>
+            </g:each>
         </div>
     </div>
-
-</div>
     </div>
 <div class="right">
 <div class="form-group" >

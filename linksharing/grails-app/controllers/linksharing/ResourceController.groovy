@@ -13,23 +13,16 @@ class ResourceController {
         println "==========" + resource.topic.resource
     }
 
-    def createLink(String link, String description, String topic, String title) {
+    def createLink(String link, String description, Topic topic, String title) {
         String user = session.getAttribute("user")
         resourceService.linkResource(link, description, topic, title, user)
-        ReadingItemService readingItemService = new ReadingItemService(topic)
         flash.message = "Link Created Successfully"
-        List<Resource> res = resourceService.userResource(user)
-        res.each { docs ->
-            des.add(docs.description)
-            userName.add(docs.user)
-
-        }
-        render(view: '/dashboard/dashboard', model: [resource1: des[0], resource2: des[1], user1: userName[0], user2: userName[1]])
-
+        redirect(controller:'dashboard',action:'index')
 
     }
 
-    def createDocument(String description, String topic, String title) {
+    def createDocument(String description, Topic topic, String title) {
+        println "++++++Topic+++++++++" +topic
         String user = session.getAttribute("user")
         def document = request.getFile('document')
         resourceService.documentResource(document, description, topic, title, user)
@@ -56,6 +49,11 @@ class ResourceController {
             flash.message = "download successfull"
             redirect(controller: 'dashboard', action: 'index')
 
+        }
+        else{
+            LinkResource linkResource=LinkResource.findByTopic(topic)
+            String url=linkResource.url
+            redirect(url:url)
         }
     }
 }

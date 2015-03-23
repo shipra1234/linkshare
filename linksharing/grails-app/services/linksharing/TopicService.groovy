@@ -9,17 +9,19 @@ class TopicService {
   def createTopic(String name,String visibility,String username){
       Topic topic=new Topic(name:name,visibility:visibility)
       User user= User.findByUsername(username)
-      user.addToTopic(topic)
       topic.validate()
       if(topic.hasErrors())
       {
-         println "+++++++errors+++++" +topic.errors
+         String msg="Validation errors"
+          return msg
       }
       else {
-
+          user.addToTopic(topic)
           user.save(flush: true, failOnError: true)
           Subscription subscription=new Subscription(topic:topic,user:user,seriousness:Subscription.Seriousness.SERIOUS)
           subscription.save(flush:true,failOnError:true)
+          String msg="topic created"
+          return  msg
       }
 
     }

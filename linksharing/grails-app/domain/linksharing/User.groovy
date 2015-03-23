@@ -9,7 +9,6 @@ class User {
     String lastName
     String confirmPassword
     String photo
-   // boolean admin
     String role
     boolean active
     Date dateCreated

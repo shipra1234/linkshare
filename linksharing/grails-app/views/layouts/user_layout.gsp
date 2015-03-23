@@ -32,9 +32,9 @@
             <li class="dropdown" id="down">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${username} <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="${createLink(action:'editProfile',controller:'profile')}">Profile</a></li>
                      <li class="divider"></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="${createLink(action:'signUp',controller:'login' )}">Logout</a></li>
                 </ul>
             </li>
         </ul>

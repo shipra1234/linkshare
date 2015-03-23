@@ -12,27 +12,18 @@ class TopicController {
     def saveTopic(String topicName,String visibility){
         println "name+++++++++++" +topicName
         String user = session.getAttribute("user")
-        List errors=  topicService.createTopic(topicName,visibility,user)
-          if(errors)
-          {
-              flash.msg=errors
-              redirect(controller:'dashboard',action:'index')
-          }
-        else {
-              flash.message = "Topic Created Successfully"
+        String msg =  topicService.createTopic(topicName,visibility,user)
+
+              flash.message=msg
               redirect(controller:'dashboard',action:'index')
           }
 
-
-    }
     def showTopic()
     {
         Topic topic=Topic.get(params.topic)
         render(view:'showTopic')
     }
     def searchTopic(String resource) {
-        println "params+++++++++" +params
-           println "+++++resource++++"+resource
         List<Resource> resources=Resource.createCriteria().list(max:5,offset:0) {
             ilike("description","%${resource}%")
         }

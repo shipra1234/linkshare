@@ -75,6 +75,20 @@ class ApplicationTagLib {
             out<< g.render(template:'/user/document',model:[isRead:'Download',resource:resource.id])
         }
     }
+    def subscribe={attrs,body->
+        Topic topic=attrs.topic
+       String username= session.getAttribute('user')
+        User user=User.findByUsername(username)
+        Subscription subscription=Subscription.findByTopicAndUser(topic,user)
+
+        if(subscription!=[]){
+            out << g.render(template:'/user/subscribe',model:[subscribe:'unsubscribe',topic:topic.id,subscriptionId:subscription.id])
+        }
+        else{
+            out << g.render(template:'/user/subscribe',model:[subscribe:'subscribe',topic:topic.id,subscriptionId:subscription.id])
+        }
+
+    }
     }
 
 

@@ -12,4 +12,20 @@ class SubscriptionService {
 
             sub.save(flush: true, failOnError: true)
     }
+
+    def update(String username,Topic topic,Subscription subscription){
+        User user=User.findByUsername(username)
+        if(topic.user==user)
+        {
+            String message="you can not unsubscribe the topic"
+            return message
+        }
+        else{
+
+            subscription.executeUpdate("delete Subscription where id=(:id)", [id:subscription.id])
+                String message="unsubscribe successfully"
+                   return message
+
+        }
+    }
 }

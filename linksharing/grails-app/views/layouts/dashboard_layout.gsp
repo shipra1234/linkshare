@@ -34,15 +34,15 @@
         <li class="dropdown" id="down">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${username} <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Profile</a></li>
+                <li><a href="${createLink(action:'editProfile',controller:'profile')}">Profile</a></li>
                 <li class="divider"></li>
                 <li><a href="${createLink(action:'userList',controller:'user')}">User</a></li>
                 <li class="divider"></li>
-                <li><a href="${createLink(action:'showTopic',controller:'topic')}">Topic</a></li>
+                <li><a href="${createLink(action:'#',controller:'#')}">Topic</a></li>
                 <li class="divider"></li>
-                <li><a href="${createLink(action:'showPost',controller:'post')}">Post</a></li>
+                <li><a href="${createLink(action:'trendingTopic',controller:'post')}">Post</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="${createLink(action:'signUp',controller:'login' )}">Logout</a></li>
             </ul>
         </li>
     </ul>
@@ -54,17 +54,15 @@
         <g:actionSubmitImage class="message" value="message" src="${resource(dir:'images',file:'link.jpeg')}" id="link"/>
         <g:actionSubmitImage class="message" value="message" src="${resource(dir:'images',file:'message.jpeg')}" id="document"/>
         <g:actionSubmitImage class="message" value="message" src="${resource(dir:'images',file:'topic.jpeg')}" id="topic"/>
-        <g:actionSubmitImage class="message" value="message" src="${resource(dir:'images',file:'subscribe.jpeg')}" id="subscribe"/>
-
     </div>
     <div id="n">
 
-        <form class="navbar-form navbar-right" role="search" id="search">
+        <g:form class="navbar-form navbar-right" role="search" id="search" controller="search" action="topicSearch">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Search" name="topic">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+        </g:form>
     </div>
 </div>
 
@@ -133,7 +131,7 @@
                     <label>Description:*</label>
                     <g:textArea name="description" rows="3" cols="8"/><br/>
                     <label>Topic</label>
-                    <g:select name="topic" from="${linksharing.Topic.list()}" noSelection="['Select':'select topic']"/>
+                    <g:select name="topic.id" from="${linksharing.Topic.list()}" optionValue="name" optionKey="id" Selection="['Select':'select topic']"/>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -160,7 +158,7 @@
                     <label>Description:*</label>
                     <g:textArea name="description" rows="3" cols="8"/><br/>
                     <label>Topic:*</label>
-                   <g:select from="${Topic.list()}" name="topic" noSelection="['Select':'SelectanOption']"/>
+                   <g:select from="${Topic.list()}" name="topic.id" optionValue="name" optionKey="id" noSelection="['Select':'SelectanOption']"/>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

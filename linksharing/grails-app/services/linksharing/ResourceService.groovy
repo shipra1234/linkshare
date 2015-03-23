@@ -25,23 +25,20 @@ class ResourceService {
         return resource
     }
 
-    def linkResource(String link,String description,String topic,String title,String user){
-
-        Topic topicId=Topic.findByName(topic)
+    def linkResource(String link,String description,Topic topic,String title,String user){
         User userId=User.findByUsername(user)
-        LinkResource resource=new LinkResource(title:title,url:link,description:description,topic:topicId,user:userId)
+        LinkResource resource=new LinkResource(title:title,url:link,description:description,topic:topic,user:userId)
         resource.save(flush:true,failOnError:true)
 
 
     }
-    def documentResource(def document,String description,String topic,String title,String user)
+    def documentResource(def document,String description,Topic topic,String title,String user)
     {
         String filename=document.originalFilename
         String path= "/home/shipra/linkshare/linksharing/upload_image/${filename}"
         document.transferTo(new File(path))
-        Topic topicId=Topic.findByName(topic)
         User userId=User.findByUsername(user)
-        DocumentResource resource=new DocumentResource(filePath:path,description:description,topic:topicId,
+        DocumentResource resource=new DocumentResource(filePath:path,description:description,topic:topic,
                 title:title,user:userId)
         resource.save(flush:true,failOnError: true)
 

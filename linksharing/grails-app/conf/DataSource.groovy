@@ -1,5 +1,4 @@
 dataSource {
-    pooled = true
     jmxExport = true
     driverClassName = "com.mysql.jdbc.Driver"
     username = "root"
@@ -23,7 +22,7 @@ environments {
             logsql=true
         }
     }
-    test {
+    QA {
         dataSource {
             dbCreate = "update"
             url = "jdbc:mysql://localhost/linksharing"

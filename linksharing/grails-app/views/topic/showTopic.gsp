@@ -116,6 +116,10 @@
                 <div>
                     <g:actionSubmitImage class="im" value="message" id="msg" src="${resource(dir:'images',file:'msg.jpeg')}" />
                 </div>
+
+                <div>
+                    <ls:subscribe topic="${topic}"></ls:subscribe>
+                    </div>
                 <div style="margin-left:300px;">
                     <label>Subscription</label>
                     <label>Topic</label>
